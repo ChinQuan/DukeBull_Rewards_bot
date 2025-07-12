@@ -3,5 +3,8 @@ services:
     name: duke-bull-bot
     env: python
     plan: free
-    buildCommand: "pip install -r requirements.txt"
+    buildCommand: |
+      rm -rf .venv
+      pip install --upgrade pip
+      pip install -r requirements.txt
     startCommand: "python bot.py"
