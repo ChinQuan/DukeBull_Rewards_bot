@@ -1,14 +1,8 @@
 services:
-  - type: web
+  - type: worker
     name: duke-bull-bot
     env: python
     plan: free
-
-    # <<< KLUCZOWE: informujemy Render, jakiego Pythona ma użyć >>>
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.8          # lub 3.10.13 – byle < 3.13
-
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
